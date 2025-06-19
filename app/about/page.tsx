@@ -22,14 +22,14 @@ export default function AboutUs(){
                 <AccordionItem value={index.toString()} key={index}>
                     <AccordionTrigger className="hover:no-underline">
                         <div className={`flex flex-col md:flex-row gap-2 md:gap-6`}>
-                            <Image src={item.image} alt="founder-pic" width={128} height={128} className="max-h-20 md:max-h-32 max-w-20 md:max-w-32 rounded-2xl"/>
+                            <Image src={item.image} alt="founder-pic" width={128} height={128} className="max-h-20 md:max-h-32 max-w-20 md:max-w-32 rounded-lg"/>
                             <div className="flex flex-col items-start justify-center">
                                 <div className="text-xl md:text-3xl md:font-semibold font-sans">{item.name}</div>
-                                <div className="test-sm md:text-base">{item.designation}</div>
+                                <div className="test-sm md:text-base pt-2">{item.designation}</div>
                                 <div className="flex justify-center items-end gap-2">
-                                    <a href={item.linkedinURL} target="_blank"><Image src="/linkedin_blue.png" alt="linkedin" width={50} height={50} className="max-h-5 max-w-5" /></a>
-                                    <a href={item.twitterURL} target="_blank"><Image src="/twitter_blue.png" alt="twitter" width={50} height={50} className="max-h-5 max-w-5" /></a>
-                                    <a href={`mailto:${item.emailURL}`}><Image src="/message.png" alt="linkedin" width={50} height={50} className="max-h-6 max-w-6" /></a>
+                                    <a href={item.linkedinURL} target="_blank"><Image src="/linkedin_blue.png" alt="linkedin" width={50} height={50} className="max-h-5 max-w-5 rounded-sm" /></a>
+                                    <a href={item.twitterURL} target="_blank"><Image src="/twitter_blue.png" alt="twitter" width={50} height={50} className="max-h-5 max-w-5 rounded-sm" /></a>
+                                    <a href={`mailto:${item.emailURL}`}><Image src="/message.png" alt="linkedin" width={50} height={50} className="max-h-5 max-w-5 rounded-sm" /></a>
                                 </div>
                             </div>
                         </div>
