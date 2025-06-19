@@ -17,7 +17,7 @@ export const Tooltip = ({
     id: number;
     name: string;
     designation: string;
-    image: string;
+    src: string;
   }[];
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -82,7 +82,7 @@ export const Tooltip = ({
             onMouseMove={handleMouseMove}
             height={50}
             width={50}
-            src={item.image}
+            src={item.src}
             alt={item.name}
             className="relative !m-0 h-10 w-10 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105"
           />
