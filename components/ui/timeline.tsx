@@ -7,10 +7,12 @@ import {
 } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface TimelineEntry {
   title: string;
   content: React.ReactNode;
+  navigateURL : string
 }
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
@@ -39,16 +41,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       ref={containerRef}
     >
       <div className="w-10/12 lg:w-8/12">
-        <h2 className="text-2xl lg:text-5xl text-white font-bold pt-16">
-          Services at Vulcan Technologies
-        </h2>
+        <div className='font-extrabold text-3xl lg:text-5xl flex justify-center items-center w-full text-white'>Our services</div>
       </div>
 
-      <div ref={ref} className="relative w-10/12 lg:w-8/12 pb-16 lg:pb-32">
+      <div ref={ref} className="relative w-10/12 lg:w-8/12 pb-16">
         {data.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col lg:flex-row justify-start pt-10 lg:pt-40 lg:gap-10"
+            className="flex flex-col lg:flex-row justify-start pt-10 lg:pt-20 lg:gap-10"
           >
             <div className="sticky flex flex-col lg:flex-row z-40 items-center top-40 self-start">
               <div className="h-10 absolute left-3 lg:left-3 w-10  rounded-full bg-white dark:bg-black flex items-center justify-center">
@@ -63,7 +63,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               <h3 className="lg:hidden block text-2xl mb-4 text-left font-bold text-neutral-500 dark:text-neutral-500">
                 <Image src={item.title} alt="image" height={250} width={250} className="max-h-32 max-w-32" />
               </h3>
-              {item.content}{" "}
+              <Link href={item.navigateURL}>{item.content}{" "}</Link>
             </div>
           </div>
         ))}

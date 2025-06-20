@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/accordion"
 
 export default function FAQ() {
-    return (<div className="w-full flex justify-center items-center text-white bg-neutral-950 pt-20 pb-28" >
+    return (<div className="w-full flex justify-center items-center text-white bg-slate-950 pt-20 pb-28" >
             <Accordion
             type="single"
             collapsible
